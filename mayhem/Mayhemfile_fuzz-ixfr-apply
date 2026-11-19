@@ -1,0 +1,9 @@
+project: savantenvs/nsd
+target: fuzz-ixfr-apply
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-ixfr-apply/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/out/fuzz_ixfr_apply
+    libfuzzer: true
+    timeout: 10

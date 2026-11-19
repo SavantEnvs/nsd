@@ -1,0 +1,18 @@
+example.com.
+$ORIGIN example.com.
+$TTL 3600
+@ IN SOA ns1 hostmaster 1 7200 3600 1209600 300
+ IN NS ns1
+ns1 IN A 192.0.2.53
+www IN A 192.0.2.80
+mail IN MX 10 www
+$$NEW$$
+$ORIGIN example.com.
+$TTL 3600
+@ IN SOA ns1 hostmaster 2 7200 3600 1209600 300
+ IN NS ns1
+ns1 IN A 192.0.2.53
+www IN A 192.0.2.81
+mail IN MX 10 www
+txt IN TXT "hello"
+svc IN SVCB 1 www alpn=h2

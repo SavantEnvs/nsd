@@ -1,0 +1,9 @@
+project: savantenvs/nsd
+target: fuzz-nsdconf
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-nsdconf/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/out/fuzz_nsdconf
+    libfuzzer: true
+    timeout: 10

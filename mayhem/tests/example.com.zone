@@ -1,0 +1,23 @@
+$ORIGIN example.com.
+$TTL 3600
+@	IN SOA ns1 hostmaster 2024010101 7200 3600 1209600 300
+	IN NS ns1
+	IN MX 10 mail
+	IN TXT "v=spf1 -all"
+	IN CAA 0 issue "ca.example.net"
+ns1	IN A 192.0.2.53
+ns1	IN AAAA 2001:db8::53
+mail	IN A 192.0.2.25
+www	IN A 192.0.2.80
+c1	IN CNAME www
+*.wild	IN TXT "wildcard"
+dn	IN DNAME example.org.
+deleg	IN NS ns.deleg
+deleg	IN DS 12345 8 2 49FD46E6C4B45C55D4AC69CBD3CD34AC1AFE51DE42D3A40F1E2A3B4C5D6E7F80
+ns.deleg	IN A 192.0.2.54
+_sip._udp	IN SRV 10 60 5060 sip
+sip	IN A 192.0.2.60
+svc	IN SVCB 1 www alpn=h2,h3 port=8443 ipv4hint=192.0.2.80
+naptr	IN NAPTR 100 10 "S" "SIP+D2U" "" _sip._udp
+loc	IN LOC 52 22 23.000 N 4 53 32.000 E -2.00m 0.00m 10000m 10m
+hinfo	IN HINFO "PC" "Linux"

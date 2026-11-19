@@ -1,0 +1,30 @@
+$ORIGIN com.
+example	3600	IN	SOA	ns1.example.com. hostmaster.example.com. (
+		2024010101 7200 3600 1209600 300 )
+	3600	IN	NS	ns1.example.com.
+	3600	IN	MX	10 mail.example.com.
+	3600	IN	TXT	"v=spf1 -all"
+	3600	IN	CAA	0 issue "ca.example.net"
+$ORIGIN _udp.example.com.
+_sip	3600	IN	SRV	10 60 5060 sip.example.com.
+$ORIGIN example.com.
+c1	3600	IN	CNAME	www.example.com.
+deleg	3600	IN	NS	ns.deleg.example.com.
+	3600	IN	DS	12345 8 2 49fd46e6c4b45c55d4ac69cbd3cd34ac1afe51de42d3a40f1e2a3b4c5d6e7f80
+$ORIGIN deleg.example.com.
+ns	3600	IN	A	192.0.2.54
+$ORIGIN example.com.
+dn	3600	IN	DNAME	example.org.
+hinfo	3600	IN	HINFO	"PC" "Linux"
+loc	3600	IN	LOC	52 22 23.000 N 04 53 32.000 E -2m 0.00m 10000m 10m
+mail	3600	IN	A	192.0.2.25
+naptr	3600	IN	NAPTR	100 10 "S" "SIP+D2U" "" _sip._udp.example.com.
+ns1	3600	IN	A	192.0.2.53
+	3600	IN	AAAA	2001:db8::53
+sip	3600	IN	A	192.0.2.60
+svc	3600	IN	SVCB	1 www.example.com. alpn="h2,h3" port=8443 ipv4hint=192.0.2.80
+$ORIGIN wild.example.com.
+*	3600	IN	TXT	"wildcard"
+$ORIGIN example.com.
+www	3600	IN	A	192.0.2.80
+; zone example.com is ok

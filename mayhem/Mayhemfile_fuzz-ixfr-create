@@ -1,0 +1,9 @@
+project: savantenvs/nsd
+target: fuzz-ixfr-create
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-ixfr-create/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/out/fuzz_ixfr_create
+    libfuzzer: true
+    timeout: 10
